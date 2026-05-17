@@ -18,7 +18,7 @@ The MCP bridge solves this by routing all operations through UE's own C++ subsys
 
 # How to Install
 
-See https://github.com/ChiR24/Unreal_mcp and follow the instructions.
+See https://github.com/Yiyang-Chen/Unreal_mcp and follow the instructions.
 
 # UE MCP Control
 
@@ -102,6 +102,16 @@ This returns the complete JSON Schema for every tool, including all available `a
 If the schema for a specific tool is too large, you can also read its source definition directly at `Plugins/McpAutomationBridge/Source/McpAutomationBridge/Private/MCP/Tools/McpTool_<ToolName>.cpp`.
 
 Before calling any tool, also check if a file named after that tool exists in `.cursor/skills/ue-mcp-control/`. If it does, read and follow its instructions first.
+
+# File Editing
+
+## Workflow
+
+1. Follow the instruction to edit the files
+2. Make sure that there are no compile errors
+3. Write and run some unit tests based on the gameplay decisions
+4. Start an empty subagent to make a code review
+5. Fix the issues detected and repeat from 3 until there are no issues
 
 ## C++ File Editing
 
