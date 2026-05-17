@@ -103,6 +103,14 @@ If the schema for a specific tool is too large, you can also read its source def
 
 Before calling any tool, also check if a file named after that tool exists in `.cursor/skills/ue-mcp-control/`. If it does, read and follow its instructions first.
 
+## Editor Window Capture (`capture_editor_window`)
+
+Use `control_editor` with `action: capture_editor_window` to capture any editor tool window (Animation Editor, Blueprint Editor, etc.) as a PNG screenshot. Pass `assetPath` to open and capture a specific asset's editor, or omit it to capture the currently focused window.
+
+**Cleanup rule**: After reading the captured screenshot, **always delete the PNG file** unless the user explicitly asks to keep it. Screenshots are saved under `Saved/Screenshots/EditorCapture/` and will accumulate if not cleaned up.
+
+**Timing note**: If the asset editor was just opened by this call, the window content may not be fully rendered (e.g., Notify tracks not yet loaded). When the capture looks incomplete, wait briefly and capture again, or ask the user to confirm the editor is fully open before capturing.
+
 # File Editing
 
 ## Workflow
